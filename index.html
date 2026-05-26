@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akito Kuranari — Web制作 / バックエンド・インフラ</title>
+  <meta name="description" content="バックエンド・インフラエンジニアによるWeb制作ポートフォリオ。HTML/CSSコーディングからサーバーへのデプロイまで一気通貫で対応します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#top" class="nav__logo">Akito&nbsp;Kuranari</a>
+      <ul class="nav__menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#strength">Strength</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero__eyebrow">Web Development Portfolio</p>
+        <h1 class="hero__title">Akito&nbsp;Kuranari</h1>
+        <p class="hero__tagline">バックエンドとインフラエンジニア｜<wbr>デプロイまで一気通貫対応</p>
+        <p class="hero__lead">
+          HTML / CSS のコーディングから、AWS上のサーバーへの公開・運用まで。<br>
+          「作って終わり」ではなく、Webサイトを<strong>動く状態で届ける</strong>ところまでお任せいただけます。
+        </p>
+        <div class="hero__actions">
+          <a href="#works" class="btn btn--primary">制作実績を見る</a>
+          <a href="#contact" class="btn btn--ghost">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section__title">About</h2>
+        <div class="about">
+          <p>
+            普段はバックエンド・インフラエンジニアとして、AWS を用いたサーバー構築や運用に携わっています。
+            その経験を活かし、Web制作では <strong>コーディングだけでなく公開・運用までを見据えた提案</strong> を得意としています。
+          </p>
+          <p>
+            レスポンシブ対応やページ表示速度、サーバー設定まわりなど、
+            「公開後に困りがちなポイント」までまとめて対応できるのが強みです。
+            丁寧なコミュニケーションと納期遵守を大切にしています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Skills</h2>
+        <div class="skills">
+          <div class="skill-group">
+            <h3 class="skill-group__title">フロントエンド</h3>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>レスポンシブデザイン</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">バックエンド</h3>
+            <ul class="tags">
+              <li>PHP</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">インフラ / デプロイ</h3>
+            <ul class="tags">
+              <li>AWS</li>
+              <li>Terraform</li>
+              <li>サーバー構築・公開</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strength -->
+    <section id="strength" class="section">
+      <div class="container">
+        <h2 class="section__title">Strength</h2>
+        <p class="section__intro">Web制作で他のコーダーと差別化できる、私の一番の強みです。</p>
+        <div class="strength">
+          <div class="strength__step">
+            <span class="strength__num">01</span>
+            <h3>コーディング</h3>
+            <p>デザインをもとに、HTML / CSS で正確かつ保守しやすいマークアップを行います。</p>
+          </div>
+          <div class="strength__arrow" aria-hidden="true">→</div>
+          <div class="strength__step">
+            <span class="strength__num">02</span>
+            <h3>サーバー準備</h3>
+            <p>AWS などのサーバー環境を構築。独自ドメイン・SSL（HTTPS化）の設定にも対応します。</p>
+          </div>
+          <div class="strength__arrow" aria-hidden="true">→</div>
+          <div class="strength__step">
+            <span class="strength__num">03</span>
+            <h3>デプロイ・公開</h3>
+            <p>制作物を本番サーバーへ公開し、表示確認・運用まで。「公開できない」を解消します。</p>
+          </div>
+        </div>
+        <p class="strength__note">
+          ＊コーディングのみ、公開作業のみのご依頼も歓迎です。
+        </p>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Works</h2>
+        <p class="section__intro">
+          コーディング力を実物で確認いただくためのデモ作品です（自主制作）。スマートフォン表示にも対応しています。
+        </p>
+        <div class="works">
+          <a class="work-card" href="works/cafe/" target="_blank" rel="noopener">
+            <div class="work-card__thumb work-card__thumb--cafe">
+              <span>CAFE LP</span>
+            </div>
+            <div class="work-card__body">
+              <h3 class="work-card__title">カフェのランディングページ</h3>
+              <p class="work-card__desc">架空のカフェを題材にした、レスポンシブ対応の1カラムLP。</p>
+              <ul class="work-card__tags">
+                <li>HTML</li><li>CSS</li><li>レスポンシブ</li>
+              </ul>
+            </div>
+          </a>
+          <a class="work-card" href="works/clinic/" target="_blank" rel="noopener">
+            <div class="work-card__thumb work-card__thumb--clinic">
+              <span>CLINIC LP</span>
+            </div>
+            <div class="work-card__body">
+              <h3 class="work-card__title">クリニックのコーポレートLP</h3>
+              <p class="work-card__desc">信頼感を重視した、医療系サイト向けのレイアウトサンプル。</p>
+              <ul class="work-card__tags">
+                <li>HTML</li><li>CSS</li><li>レスポンシブ</li>
+              </ul>
+            </div>
+          </a>
+        </div>
+        <p class="strength__note">
+          ソースコードは <a href="https://github.com/krnringo" target="_blank" rel="noopener">GitHub</a> で公開しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section__title">Contact</h2>
+        <p class="section__intro">お仕事のご相談・お見積もりはお気軽にどうぞ。</p>
+        <div class="contact">
+          <a class="contact__item" href="mailto:krnringo@gmail.com">
+            <span class="contact__label">Email</span>
+            <span class="contact__value">krnringo@gmail.com</span>
+          </a>
+          <a class="contact__item" href="https://github.com/krnringo" target="_blank" rel="noopener">
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value">github.com/krnringo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Akito Kuranari</p>
+    </div>
+  </footer>
+</body>
+</html>

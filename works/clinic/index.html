@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あおぞら内科クリニック（デモ作品）</title>
+  <meta name="description" content="架空クリニックのコーポレートLP。Akito Kuranari のデモ作品です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0e7490;
+      --primary-dark: #0b5a70;
+      --accent: #06b6d4;
+      --sky: #ecfeff;
+      --text: #334155;
+      --heading: #0f3a47;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, sans-serif;
+      color: var(--text);
+      line-height: 1.9;
+      background: #fff;
+    }
+    .demo-bar {
+      background: var(--primary-dark); color: #fff; text-align: center;
+      font-size: 0.8rem; padding: 8px 16px;
+    }
+    .demo-bar a { color: #a5f3fc; }
+    .container { width: 100%; max-width: 1040px; margin-inline: auto; padding-inline: 24px; }
+
+    /* Header */
+    header.site { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+    .brand small { display: block; font-size: 0.62rem; color: var(--muted); font-weight: 500; letter-spacing: 0.15em; }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-right ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+    .nav-right a { text-decoration: none; color: var(--text); font-size: 0.9rem; }
+    .nav-right a:hover { color: var(--primary); }
+    .tel-btn {
+      background: var(--primary); color: #fff !important; padding: 10px 22px;
+      border-radius: 999px; font-weight: 700; font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero { background: linear-gradient(120deg, var(--sky), #fff); }
+    .hero .container { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding-block: 72px; }
+    .hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); color: var(--heading); margin: 0 0 20px; line-height: 1.5; }
+    .hero h1 .hl { color: var(--primary); }
+    .hero p { color: var(--muted); margin: 0 0 28px; }
+    .hero img { width: 100%; border-radius: 16px; display: block; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; text-decoration: none; padding: 14px 30px; border-radius: 999px; font-weight: 700; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline { background: #fff; color: var(--primary); border: 1.5px solid var(--primary); }
+
+    /* Notice strip */
+    .hours-strip { background: var(--primary); color: #fff; }
+    .hours-strip .container { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 16px; padding: 22px 24px; text-align: center; }
+    .hours-strip .item span { display: block; font-size: 0.78rem; opacity: 0.85; }
+    .hours-strip .item strong { font-size: 1.1rem; }
+
+    section { padding: 84px 0; }
+    .section-head { text-align: center; margin-bottom: 48px; }
+    .section-head .en { color: var(--accent); letter-spacing: 0.2em; font-size: 0.78rem; display: block; margin-bottom: 8px; }
+    .section-head h2 { margin: 0; font-size: 1.8rem; color: var(--heading); }
+
+    /* Departments */
+    .alt { background: var(--sky); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 32px 26px; text-align: center; }
+    .card .ico {
+      width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%;
+      background: var(--sky); color: var(--primary); display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 700;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 1.15rem; color: var(--heading); }
+    .card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+    /* Features */
+    .feature { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .feature .item { display: flex; gap: 16px; }
+    .feature .num { flex: none; width: 40px; height: 40px; border-radius: 10px; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .feature h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--heading); }
+    .feature p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+    /* Access */
+    .access { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .access table { width: 100%; border-collapse: collapse; }
+    .access th, .access td { text-align: left; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .access th { width: 120px; color: var(--heading); }
+    .map { width: 100%; height: 320px; border: 0; border-radius: 14px; background: var(--sky); }
+    .timetable { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.9rem; }
+    .timetable th, .timetable td { border: 1px solid var(--border); padding: 10px; text-align: center; }
+    .timetable th { background: var(--sky); color: var(--heading); }
+
+    /* CTA */
+    .cta { background: linear-gradient(120deg, var(--primary), var(--accent)); color: #fff; text-align: center; }
+    .cta h2 { margin: 0 0 12px; font-size: 1.7rem; }
+    .cta p { margin: 0 0 28px; opacity: 0.92; }
+    .cta .btn-white { background: #fff; color: var(--primary); }
+
+    footer.site { background: var(--heading); color: #cbeef5; text-align: center; padding: 36px 16px; }
+    footer.site .brand { color: #fff; justify-content: center; }
+    footer.site small { color: #8fc6d4; }
+
+    @media (max-width: 820px) {
+      .nav-right ul { display: none; }
+      .hero .container { grid-template-columns: 1fr; padding-block: 48px; }
+      .cards, .feature, .access { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">これは制作デモです（架空のクリニック）／ <a href="../../">← ポートフォリオに戻る</a></div>
+
+  <header class="site">
+    <div class="nav container">
+      <div class="brand">あおぞら内科クリニック<small>AOZORA INTERNAL MEDICINE</small></div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="#dept">診療案内</a></li>
+          <li><a href="#feature">特長</a></li>
+          <li><a href="#access">アクセス</a></li>
+        </ul>
+        <a href="tel:0000000000" class="tel-btn">☎ 00-0000-0000</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div>
+        <h1>地域の皆さまの、<br><span class="hl">かかりつけ医</span>として。</h1>
+        <p>風邪や生活習慣病から健康診断まで。<br>つらい症状を、安心してご相談ください。<br>WEBから24時間ご予約いただけます。</p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn btn-primary">WEB予約はこちら</a>
+          <a href="#access" class="btn btn-outline">診療時間・アクセス</a>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=900&q=80" alt="診察の様子">
+    </div>
+  </section>
+
+  <div class="hours-strip">
+    <div class="container">
+      <div class="item"><span>診療時間</span><strong>9:00 – 12:30 / 15:00 – 18:30</strong></div>
+      <div class="item"><span>休診日</span><strong>木曜・日曜・祝日</strong></div>
+      <div class="item"><span>ご予約</span><strong>WEB / お電話で受付</strong></div>
+    </div>
+  </div>
+
+  <section id="dept">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">DEPARTMENTS</span>
+        <h2>診療案内</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico">内</div>
+          <h3>一般内科</h3>
+          <p>発熱・咳・腹痛など、日常の体調不良を幅広く診療します。</p>
+        </article>
+        <article class="card">
+          <div class="ico">慢</div>
+          <h3>生活習慣病</h3>
+          <p>高血圧・糖尿病・脂質異常症の検査と継続的な管理を行います。</p>
+        </article>
+        <article class="card">
+          <div class="ico">健</div>
+          <h3>健康診断・予防接種</h3>
+          <p>各種健診や予防接種に対応。お気軽にご相談ください。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="feature" class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">FEATURES</span>
+        <h2>当院の特長</h2>
+      </div>
+      <div class="feature">
+        <div class="item">
+          <span class="num">1</span>
+          <div><h3>待ち時間の少ない予約制</h3><p>WEB予約で、できる限りお待たせしない診療を心がけています。</p></div>
+        </div>
+        <div class="item">
+          <span class="num">2</span>
+          <div><h3>丁寧な説明</h3><p>検査結果や治療方針を、わかりやすい言葉でご説明します。</p></div>
+        </div>
+        <div class="item">
+          <span class="num">3</span>
+          <div><h3>バリアフリー対応</h3><p>車椅子やベビーカーでも安心してご来院いただけます。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="access">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">ACCESS</span>
+        <h2>診療時間・アクセス</h2>
+      </div>
+      <div class="access">
+        <div>
+          <table>
+            <tr><th>医院名</th><td>あおぞら内科クリニック</td></tr>
+            <tr><th>住所</th><td>〇〇県〇〇市〇〇 4-5-6 〇〇駅前ビル 2F</td></tr>
+            <tr><th>アクセス</th><td>〇〇線「〇〇駅」徒歩2分</td></tr>
+            <tr><th>電話</th><td>00-0000-0000</td></tr>
+          </table>
+          <table class="timetable">
+            <tr><th>受付</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
+            <tr><td>午前</td><td>●</td><td>●</td><td>●</td><td>―</td><td>●</td><td>●</td></tr>
+            <tr><td>午後</td><td>●</td><td>●</td><td>●</td><td>―</td><td>●</td><td>―</td></tr>
+          </table>
+        </div>
+        <iframe class="map" title="地図（サンプル）" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=139.69,35.68,139.71,35.70&layer=mapnik"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta">
+    <div class="container">
+      <h2>WEBから24時間ご予約いただけます</h2>
+      <p>初診の方も、お電話・WEBどちらでも受け付けております。</p>
+      <a href="#" class="btn btn-white">WEB予約フォームへ</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="brand" style="display:block;">あおぞら内科クリニック</div>
+    <small>© 2026 あおぞら内科クリニック（架空のデモサイト） — Coded by Akito Kuranari</small>
+  </footer>
+</body>
+</html>

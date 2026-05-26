@@ -1,0 +1,381 @@
+/* =========================================================
+   Akito Kuranari — Portfolio
+   シンプル・クリーンなレスポンシブスタイル
+   ========================================================= */
+
+:root {
+  --ink: #1f2937;
+  --ink-strong: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --container: 960px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", "Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav__logo {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink-strong);
+  letter-spacing: 0.02em;
+}
+.nav__logo:hover { text-decoration: none; }
+
+.nav__menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__menu a {
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 96px 0 80px;
+  background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-strong);
+  line-height: 1.2;
+}
+
+.hero__tagline {
+  margin: 16px 0 0;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hero__lead {
+  margin: 24px 0 0;
+  color: var(--muted);
+  max-width: 620px;
+}
+.hero__lead strong { color: var(--ink); }
+
+.hero__actions {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
+}
+.btn--primary:hover { background: var(--accent-dark); }
+
+.btn--ghost {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Sections ---------- */
+.section { padding: 80px 0; }
+.section--alt { background: var(--bg-alt); }
+
+.section__title {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ink-strong);
+  position: relative;
+  padding-bottom: 14px;
+}
+.section__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.section__intro {
+  margin: 0 0 36px;
+  color: var(--muted);
+}
+
+/* ---------- About ---------- */
+.about { max-width: 700px; }
+.about p { margin: 0 0 18px; }
+.about strong { color: var(--ink-strong); }
+
+/* ---------- Skills ---------- */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.skill-group {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+.skill-group__title {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  color: var(--ink-strong);
+}
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tags li {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* ---------- Strength ---------- */
+.strength {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.strength__step {
+  flex: 1;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  position: relative;
+}
+.strength__num {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.strength__step h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: var(--ink-strong);
+}
+.strength__step p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.strength__arrow {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.strength__note {
+  margin: 28px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ---------- Works ---------- */
+.works {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.work-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.work-card:hover {
+  text-decoration: none;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(17, 24, 39, 0.10);
+}
+.work-card__thumb {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+}
+.work-card__thumb--cafe { background: linear-gradient(135deg, #b45309, #f59e0b); }
+.work-card__thumb--clinic { background: linear-gradient(135deg, #0e7490, #22d3ee); }
+.work-card__body { padding: 24px; }
+.work-card__title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: var(--ink-strong);
+}
+.work-card__desc {
+  margin: 0 0 16px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.work-card__tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+.work-card__tags li {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.contact__item {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+.contact__item:hover { text-decoration: none; border-color: var(--accent); }
+.contact__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.contact__value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink-strong);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  background: var(--bg-alt);
+}
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .nav__menu { display: none; }
+  .hero { padding: 72px 0 60px; }
+  .section { padding: 60px 0; }
+  .skills { grid-template-columns: 1fr; }
+  .works { grid-template-columns: 1fr; }
+  .strength__arrow { display: none; }
+}
